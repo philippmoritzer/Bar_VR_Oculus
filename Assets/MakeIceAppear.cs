@@ -1,0 +1,47 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MakeIceAppear : MonoBehaviour
+{
+    // Start is called before the first frame update
+    public GameObject cube1;
+    public GameObject cube2;
+    public GameObject cube3;
+    private int counter = 1;
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if (other.gameObject.tag == "IceCube")
+        {
+            switch (counter) {
+                case 1:
+                    cube1.active = true;
+                    break;
+                case 2:
+                    cube2.active = true;
+                    break;
+                case 3:
+                    cube3.active = true;
+
+                    break;            
+            
+        }
+            Destroy(other);
+            counter++;
+
+    }
+        
+    }
+}

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Bottle
+  - fluid
+  - fluidVodka
+  - fluidGin
+  - fluidRum
+  - receiptTitle
+  - receiptHolder
+  - fluidWhiterum
+  - fluidPineapplejuice
+  - fluidCoconutjuice
+  - WinText
+  - knive
+  - Lemon_Piece
+  - Lemon_Piece_Glass
+  - Lime_Piece
+  - Lime_Piece_Glass
+  - IceCube
+  - fluidLimejuice
+  - fluidTequila
+  - fluidCoke
+  - fluidOrangejuice
+  - fluidGrenadineSirup
+  - straw
+  - WaitingPinaColada
+  - WaitingLongIslandIceTea
+  - WaitingTequilaSunrise
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Grabbable
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
