@@ -22,6 +22,7 @@ public class MakeStrawAppear : MonoBehaviour
     {
         if (other.gameObject.tag == "straw")
         {
+            ReceiptManager.GetInstance().activeReceipt.strawAdded = true;
             straw.active = true;
             Destroy(other);
 

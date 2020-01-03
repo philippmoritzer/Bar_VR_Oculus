@@ -6,10 +6,19 @@ public class Receipt
 {
     public bool done = false;
     public int result = -1;
-    
-    public Receipt(string title, List<Ingredient> ingredients) {
+    public bool strawAdded = false;
+    public bool iceAdded;
+    public bool limeAdded = false;
+    public bool lemonAdded = false;
+    private bool limeRequired;
+    private bool lemonRequired;
+
+
+    public Receipt(string title, List<Ingredient> ingredients, bool limeRequired, bool lemonRequired) {
         this.title = title;
         this.ingredients = ingredients;
+        this.limeRequired = limeRequired;
+        this.lemonRequired = lemonRequired;
     }
 
     private string title;
@@ -27,6 +36,9 @@ public class Receipt
         get { return ingredients; }
         set { ingredients = value; }
     }
+
+    public bool LimeRequiredProp { get { return limeRequired; } set { limeRequired = value; } }
+    public bool LemonRequiredProp { get { return lemonRequired; } set { lemonRequired = value; } }
 
     public float getSum() {
         int sum = 0;

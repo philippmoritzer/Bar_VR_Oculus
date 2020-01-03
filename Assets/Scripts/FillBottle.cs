@@ -33,10 +33,38 @@ public class FillBottle : MonoBehaviour
     void Update()
     {
 
-        if (counterSum() >= Constants.MAX_FILING && !ReceiptManager.GetInstance().activeReceipt.done)
+        bool cirtursFruitAdded = false;
+
+
+        if (ReceiptManager.GetInstance().activeReceipt.LemonRequiredProp && ReceiptManager.GetInstance().activeReceipt.LimeRequiredProp)
         {
-            if (!added)
+            if (ReceiptManager.GetInstance().activeReceipt.lemonAdded && ReceiptManager.GetInstance().activeReceipt.lemonAdded)
             {
+                cirtursFruitAdded = true;
+            }
+        }
+        else if (!ReceiptManager.GetInstance().activeReceipt.LemonRequiredProp && ReceiptManager.GetInstance().activeReceipt.LimeRequiredProp)
+        {
+            if (ReceiptManager.GetInstance().activeReceipt.limeAdded)
+            {
+                cirtursFruitAdded = true;
+            }
+        }
+        else if (ReceiptManager.GetInstance().activeReceipt.LemonRequiredProp && !ReceiptManager.GetInstance().activeReceipt.LimeRequiredProp)
+        {
+            if (ReceiptManager.GetInstance().activeReceipt.lemonAdded)
+            {
+                cirtursFruitAdded = true;
+            }
+        }
+        else {
+            cirtursFruitAdded = true;
+        }
+
+
+        if (counterSum() >= Constants.MAX_FILING && !ReceiptManager.GetInstance().activeReceipt.done && ReceiptManager.GetInstance().activeReceipt.iceAdded && ReceiptManager.GetInstance().activeReceipt.strawAdded && cirtursFruitAdded)
+        {
+           
                 print("IM DOING THIS");
 
                 ReceiptManager mang = ReceiptManager.GetInstance();
@@ -64,9 +92,7 @@ public class FillBottle : MonoBehaviour
                 counter.Add(0);
                 print(result);
 
-
-
-            }
+           
         }
 
     }
@@ -74,6 +100,7 @@ public class FillBottle : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
+        print("yoyoo");
         string tag = collision.gameObject.tag.Replace("fluid", "");
 
         if (collision.gameObject.tag.Contains("fluid"))
@@ -117,8 +144,14 @@ public class FillBottle : MonoBehaviour
                         case "tequila":
                             counter[3]++;
                             break;
-                        default:
+                        case "limejuice":
                             counter[4]++;
+                            break;
+                        case "coke":
+                            counter[5]++;
+                            break;
+                        default:
+                            counter[6]++;
                             break;
                     }
                 }
@@ -203,6 +236,8 @@ public class FillBottle : MonoBehaviour
 
 
     }
+
+  
 
 
 

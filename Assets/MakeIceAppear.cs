@@ -17,7 +17,7 @@ public class MakeIceAppear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,6 +38,9 @@ public class MakeIceAppear : MonoBehaviour
                     break;            
             
         }
+            if (cube1.active && cube2.active && cube3.active) {
+                ReceiptManager.GetInstance().activeReceipt.iceAdded = true;
+            }
             Destroy(other);
             counter++;
 

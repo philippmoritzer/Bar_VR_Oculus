@@ -24,11 +24,13 @@ public class MakeCitrusFruitAppear : MonoBehaviour
         {
             lemonOnGlass.active = true;
             Destroy(other);
+            ReceiptManager.GetInstance().activeReceipt.lemonAdded = true;
 
         }
         else if (other.gameObject.tag == "Lime_Piece") {
             limeOnGlass.active = true;
             Destroy(other);
+            ReceiptManager.GetInstance().activeReceipt.limeAdded = true;
 
         }
 

@@ -26,20 +26,22 @@ public class ReceiptManager
         ingridients.Add(new Ingredient("Weißer Rum", 60));
         ingridients.Add(new Ingredient("Ananassaft", 100));
         ingridients.Add(new Ingredient("Kokusnusscreme", 40));
-        Receipt r1 = new Receipt("Pina Colada", ingridients);
+        Receipt r1 = new Receipt("Pina Colada", ingridients, false, true);
 
         List<Ingredient> ingridient2 = new List<Ingredient>();
         ingridient2.Add(new Ingredient("Rum", 25));
         ingridient2.Add(new Ingredient("Vodka", 25));
         ingridient2.Add(new Ingredient("Gin", 25));
         ingridient2.Add(new Ingredient("Tequila", 25));
-        Receipt r2 = new Receipt("Long Island Ice Tea", ingridient2);
+        ingridient2.Add(new Ingredient("Lime Juice", 25));
+        ingridient2.Add(new Ingredient("Coke", 25));
+        Receipt r2 = new Receipt("Long Island Ice Tea", ingridient2, true, false);
 
         List<Ingredient> ingridients3 = new List<Ingredient>();
         ingridients3.Add(new Ingredient("Tequila", 50));
         ingridients3.Add(new Ingredient("Grenadine Sirup", 25));
         ingridients3.Add(new Ingredient("Orange Juice", 175));
-        Receipt r3 = new Receipt("Tequila Sunrise", ingridients3);
+        Receipt r3 = new Receipt("Tequila Sunrise", ingridients3, true, true);
 
         receipts.Add(r1);
         receipts.Add(r2);
