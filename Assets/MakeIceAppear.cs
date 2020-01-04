@@ -9,9 +9,11 @@ public class MakeIceAppear : MonoBehaviour
     public GameObject cube2;
     public GameObject cube3;
     private int counter = 1;
+
+    private AudioSource audioSource;
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,9 @@ public class MakeIceAppear : MonoBehaviour
         
         if (other.gameObject.tag == "IceCube")
         {
+            if (!cube1.active || !cube2.active || !cube3.active) { 
+                audioSource.PlayOneShot(audioSource.clip);
+            }
             switch (counter) {
                 case 1:
                     cube1.active = true;

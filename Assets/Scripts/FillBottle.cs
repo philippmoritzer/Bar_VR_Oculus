@@ -14,10 +14,12 @@ public class FillBottle : MonoBehaviour
     List<int> counter = new List<int>();
     Font ArialFont;
     bool added = false;
+    private bool played;
 
     // Start is called before the first frame update
     void Start()
     {
+        played = false;
         materials = Resources.LoadAll<Material>("Materials/");
         ingredients = new List<Color>();
         foreach (var item in ReceiptManager.GetInstance().activeReceipt.IngredientsProperty)
@@ -26,6 +28,8 @@ public class FillBottle : MonoBehaviour
         }
         counter.Add(0);
         ArialFont = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
+       
+
 
     }
     // Update is called once per frame
@@ -99,14 +103,17 @@ public class FillBottle : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
+    
         print("yoyoo");
+
         string tag = collision.gameObject.tag.Replace("fluid", "");
 
         if (collision.gameObject.tag.Contains("fluid"))
         {
             if (growObject.transform.localScale.y <= 1)
             {
+
+                                 
                 growObject.transform.localScale += new Vector3(0, 0.0025f, 0);
 
                 //Pina Colada
@@ -237,7 +244,11 @@ public class FillBottle : MonoBehaviour
 
     }
 
-  
+
+
+   
+
+
 
 
 
